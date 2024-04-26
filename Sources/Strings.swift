@@ -42,7 +42,7 @@ public enum Strings {
         
         public init?(parse line: String) {
             guard let match = line.wholeMatch(of: Self.linePattern) else {
-                assertionFailure("the line cannot be parsed")
+                // empty line or comments
                 return nil
             }
             guard let keyRange = match[1].range,
